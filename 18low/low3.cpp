@@ -24,15 +24,19 @@ void fill_span(int rx, int ry, int &num)
 }
 int main()
 {
-    ios::sync_with_stdio(false);
-    cin.tie(0);
-    cin>>n;
+    srand(time(NULL));
+    int te = 1;
+    FILE *oin = fopen("./3/test4.in", "w");
+    fprintf(oin, "%d", 3 *(rand() % 3 + 1));
+    fclose(oin);
+    FILE *in = fopen("./3/test4.in", "r");
+    fscanf(in, "%d", &n);
+    fclose(in);
     int cnt = 1;
     int chk[3][3] = {0, };
     int x = 0, y = 0;
     int v = 1;
     while(cnt <= 9) {
-        cout<<x<<" "<<y<<endl;
         chk[x][y] = cnt++;
         int nx = x + dx[arr_dir];
         int ny = y + dy[arr_dir];
@@ -42,11 +46,13 @@ int main()
         x += dx[arr_dir];
         y += dy[arr_dir];
     }
+    FILE *out = fopen("./3/test4.out", "w");
     for(int i=0; i<n; i++) {
         for(int j=0; j<n; j++) {
-            cout<<span[i][j]<<" ";
+            fprintf(out, "%6d", span[i][j]);
         }
-        cout<<"\n";
+        fprintf(out, "\n");
     }
+    fclose(out);
     return 0;
 }

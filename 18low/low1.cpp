@@ -2,15 +2,21 @@
 using namespace std;
 int main()
 {
-    ios::sync_with_stdio(false);
-    cin.tie(0);
+    srand(time(NULL));
+    FILE *oin = fopen("./1/test5.in", "w");
+    fprintf(oin, "%d", rand() % 100 + 1);
+    fclose(oin);
+    FILE *in = fopen("./1/test5.in", "r");
     int n;
-    cin>>n;
+    fscanf(in, "%d", &n);
+    fclose(in);
+    FILE *out = fopen("./1/test5.out", "w");
     for(int i=1; i<=n; i++) {
         for(int k=0; k<i; k++) {
-            for(int j=1; j<i; j++) cout<<" ";
-            cout<<"*\n";
+            for(int j=1; j<i; j++) fprintf(out, " ");
+            fprintf(out, "*\n");
         }
     }
+    fclose(out);
     return 0;
 }
