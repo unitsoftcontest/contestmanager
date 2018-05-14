@@ -49,7 +49,7 @@ int main()
     FILE *out = fopen("./3/test4.out", "w");
     for(int i=0; i<n; i++) {
         for(int j=0; j<n; j++) {
-            fprintf(out, "%6d", span[i][j]);
+            fprintf(out, "%d ", span[i][j]);
         }
         fprintf(out, "\n");
     }

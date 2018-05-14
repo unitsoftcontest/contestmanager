@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+/*#include <bits/stdc++.h>
 using namespace std;
 int main()
 {
@@ -18,5 +18,21 @@ int main()
         }
     }
     fclose(out);
+    return 0;
+}
+*/
+
+
+#include <stdio.h>
+int main()
+{
+    int n;
+    scanf("%d", &n);
+    for(int i=1; i<=n; i++) {
+        for(int k=0; k<i; k++) {
+            for(int j=1; j<i; j++) printf(" ");
+            printf("*\n");
+        }
+    }
     return 0;
 }
